@@ -25,8 +25,8 @@ function viewCart() {
 function removeFromCart(itemName) {
   for(var item in cart) {
     if (item == itemName) {return item }
-    item ? getCart().splice(getCart().indexOf(item), 1) : console.log("That item is not in your cart.");
   }
+    item ? getCart().splice(getCart().indexOf(item), 1) : console.log("That item is not in your cart.");
   getCart();
 }
 
