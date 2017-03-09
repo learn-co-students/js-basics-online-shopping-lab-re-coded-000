@@ -22,7 +22,7 @@ function getCart(){
 
 function addToCart(item){
 var price = randomPrice();
-cart.push('{item}: price')
+cart.push({[item]: price});
 console.log(`${item} has been added to your cart.`)
 return cart;
 }
@@ -48,3 +48,33 @@ function randomPrice() {
    console.log(`In your cart, you have ${array.join(', ')}.`)
   }
  }
+
+
+function removeFromCart(item){
+	var founded=false;
+	for (var i=0;i <cart.length;i++)
+    	{
+	    if(cart[i].hasOwnProperty(item))
+	    {
+	    	founded=true;
+            cart.splice(i,1);
+	    }
+    }
+    if(!founded)
+	{
+		console.log("That item is not in your cart.");
+	}
+}
+
+
+function placeOrder(cardNumber){
+	if(!cardNumber)
+	{
+		console.log("We don't have a credit card on file for you to place your order.");
+	}
+	else
+	{
+		console.log("Your total cost is $"+total()+", which will be charged to the card "+cardNumber+".")
+		cart=[];
+	}
+}
