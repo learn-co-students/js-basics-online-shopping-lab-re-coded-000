@@ -8,7 +8,7 @@ function setCart(c) {
 }
 function addToCart(item){
   var price=Math.random() *100
-  price.Math.floor()
+  price=Math.floor(price)
   cart.push({[item]: price})
   console.log(`${item} has been added to your cart.`)
   return cart
@@ -30,11 +30,11 @@ function viewCart() {
 
   console.log(`In your cart, you have ${itemsAndPrices.join(', ')}.`)
 }
-
+}
 function removeFromCart(item) {
   let itemInCart = false
 
-  for (let i = 0, i < cart.length; i++) {
+  for (let i = 0; i < cart.length; i++) {
     if (cart[i].hasOwnProperty(item)) {
       itemInCart = true
       cart = cart.slice(0, i).concat(cart.slice(i + 1))
@@ -57,7 +57,7 @@ function placeOrder(cardNumber) {
 
   cart = []
 }
-}
+
 
 function total() {
   let t = 0
